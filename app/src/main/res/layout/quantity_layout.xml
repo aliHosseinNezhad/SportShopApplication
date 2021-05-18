@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="ltr">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_border_back"
+            android:gravity="center"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/minus_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/light_ripple"
+
+                android:src="@drawable/recycle_bin"
+                android:tint="@color/primaryTextColor" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="12"
+                    android:textColor="@color/primaryLightColor"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeMinTextSize="8sp"
+                    app:autoSizeTextType="uniform" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/maximum"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="حداکثر"
+                    android:textColor="@color/primaryTextColor"
+                    android:visibility="visible"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeMinTextSize="9sp"
+                    app:autoSizeTextType="uniform" />
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:visibility="gone"
+                    android:id="@+id/loading_bounce"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    app:SpinKit_Color="@color/primaryLightColor"
+                    style="@style/SpinKitView.Small.ThreeBounce"/>
+            </LinearLayout>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/plus_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="@drawable/light_ripple"
+                android:src="@drawable/plus_icon"
+                android:tint="@color/primaryLightColor" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/minus_btn_frame"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/center_guideline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <FrameLayout
+            android:id="@+id/plus_btn_frame"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintStart_toEndOf="@id/center_guideline"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

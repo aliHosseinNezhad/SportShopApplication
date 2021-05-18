@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryLightColor"
+    android:clickable="true"
+    android:focusable="true">
+    <ScrollView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/addingBasketLayout">
+        <LinearLayout
+            android:id="@+id/product_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/product_image"
+                android:paddingTop="16dp"
+                tools:src="@tools:sample/avatars"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+            <TextView
+                android:id="@+id/product_name"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="15sp"
+                app:autoSizeMaxTextSize="26sp"
+                android:textStyle="bold"
+                tools:text=" اسم محصول اسم کالا اسم محصول product name اسم محصول اسم محصو"
+                android:lines="3"
+                android:ellipsize="end"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layoutDirection="rtl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <FrameLayout
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/secondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="1px"/>
+            <RatingBar
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                tools:numStars="5"
+                android:numStars="5"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_height="wrap_content"
+                android:maxWidth="100dp"/>
+            <FrameLayout
+                android:background="@color/secondaryColor"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/productSpecification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:background="@color/secondaryColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"/>
+                <com.google.android.material.textview.MaterialTextView
+                    android:text="@string/product_introduction_text"
+                    style="@style/persian_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:drawableEndCompat="@drawable/arrow_back_ic"/>
+
+                <FrameLayout
+                    android:background="@color/secondaryColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/technical_information_text"
+                    style="@style/persian_text_style"
+                    app:drawableEndCompat="@drawable/arrow_back_ic"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/addingBasketLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6">
+
+            <ImageView
+                android:layout_marginStart="12dp"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:paddingEnd="8dp"
+                android:src="@drawable/ic_toman"
+                app:tint="@color/secondaryDarkColor" />
+
+            <com.gamapp.sportshopapplication.ui.customViews.RialTextView
+                android:id="@+id/product_price"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMaxTextSize="26sp"
+                app:autoSizeMinTextSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/far_mitra"
+                android:gravity="center_vertical"
+                android:layoutDirection="ltr"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="26sp"
+                tools:text="2343242342" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addingBasketBtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:lines="1"
+            android:background="@drawable/round_view"
+            android:layout_margin="8dp"
+            android:stateListAnimator="@null"
+            android:text="@string/adding_to_shopping_bag"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/secondaryLightColor" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:elevation="32dp"
+        android:id="@+id/job_waiting_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layoutDirection="rtl"
+                android:text=" در حال انجام"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/secondaryLightColor" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/white" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/person_ic"
+        android:title="@string/edit_information" />
+    <item
+        android:id="@+id/address"
+        android:icon="@drawable/my_location_ic"
+        android:title="@string/address_text" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:title="@string/logout" />
+</menu>

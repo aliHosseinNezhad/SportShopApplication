@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDarkColor"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.airbnb.lottie.LottieAnimationView
+        style="@style/lottie_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout"
+            style="@style/register_edit_text_style"
+            android:layout_gravity="center_vertical"
+            android:hint="@string/email_text"
+            android:scrollbars="none"
+            app:startIconDrawable="@drawable/person_ic">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                style="@style/text_input_edit_text_style"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_layout"
+            style="@style/register_edit_text_style"
+            android:hint="@string/password_text"
+            app:startIconDrawable="@drawable/person_ic">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                style="@style/text_input_edit_text_style" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_Btn"
+            style="@style/persian_button"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/primaryLightColor"
+            android:text="ورود"
+            android:textColor="@color/white"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/register_btn"
+            style="@style/persian_button"
+            android:layout_width="160dp"
+            android:layout_height="80dp"
+            android:text="عضو نیستم"
+            android:textColor="@color/white"
+            android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+</LinearLayout>
+
+<FrameLayout
+android:background="@color/transparent_black"
+android:clickable="true"
+android:focusable="true"
+android:id="@+id/login_waiting_view"
+android:layout_height="match_parent"
+android:layout_width="match_parent"
+android:visibility="gone">
+<LinearLayout
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:gravity="center"
+        android:layoutDirection="rtl"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/login_wait_text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/secondaryLightColor" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:SpinKit_Color="@color/white" />
+
+</LinearLayout>
+</FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

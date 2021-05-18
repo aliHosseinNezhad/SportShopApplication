@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="persian_text_style">
+        <item name="android:layoutDirection">rtl</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">26sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="persian_button" parent="Widget.MaterialComponents.Button">
+        <item name="android:layoutDirection">rtl</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">26sp</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+
+    <style name="register_edit_text_style">
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="theme">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edittext_round_view</item>
+    </style>
+
+    <style name="saled_product_state_view">
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingStart">8dp</item>
+    </style>
+
+    <style name="tab_layout_image">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:tint">#686868</item>
+    </style>
+
+    <style name="home_page_cards_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">16dp</item>
+    </style>
+
+
+    <style name="lottie_style">
+        <item name="lottie_fileName">final_background.json</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="lottie_autoPlay">true</item>
+        <item name="lottie_loop">true</item>
+        <item name="lottie_cacheComposition">true</item>
+        <item name="lottie_renderMode">automatic</item>
+        <item name="lottie_speed">0.5</item>
+    </style>
+
+    <style name="text_input_edit_text_style" parent="text_auto_size">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="text_auto_size">
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeMaxTextSize">26sp</item>
+        <item name="autoSizeMinTextSize">4sp</item>
+    </style>
+</resources>

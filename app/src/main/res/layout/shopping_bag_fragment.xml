@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/basket_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/empty_basket_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="32dp"
+                android:elevation="3dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="4:3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    layout="@layout/empty_basket"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/total_price_layout"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center_vertical"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/price_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:paddingEnd="8dp"
+                        android:src="@drawable/ic_toman"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/secondaryDarkColor" />
+
+                    <com.gamapp.sportshopapplication.ui.customViews.RialTextView
+                        android:id="@+id/total_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/far_mitra"
+                        android:gravity="center"
+                        android:text="12334"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/price_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center"
+                        android:text="قیمت کل: "
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/total_price"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/shadow_white"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/sale_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/total_price_layout"
+                tools:itemCount="8"
+                tools:listitem="@layout/basket_item_view" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sale_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/secondaryLightColor"
+                android:gravity="center"
+                android:visibility="visible"
+                app:cardCornerRadius="0dp"
+                app:cardElevation="16dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/finish_sale_btn"
+                        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_round_view"
+                        android:gravity="center"
+                        android:text="@string/final_sale"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/secondaryLightColor"
+                        app:autoSizeTextType="uniform"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <View
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent" />
+
+                    <Button
+                        android:id="@+id/clear_basket"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/black_round_border_back"
+                        android:gravity="center"
+                        android:text="حذف محصولات"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/secondaryDarkColor"
+                        app:autoSizeMaxTextSize="16sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/loading_bar"
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:visibility="gone"
+                app:SpinKit_Color="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_basket_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryLightColor"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/image_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/login_user_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintWidth_max="300dp"
+            app:tint="@color/secondaryLightColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="لطفا وارد حساب کاربری خود شوید"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/secondaryLightColor"
+
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="26sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_icon" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_user_panel_btn"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/primaryLightColor"
+
+            android:gravity="center"
+            android:layoutDirection="rtl"
+            android:text="@string/login_text"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/secondaryLightColor"
+            android:textDirection="rtl"
+            app:autoSizeMaxTextSize="36sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="3:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_max="200dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/job_waiting_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black"
+        android:clickable="true"
+        android:elevation="32dp"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layoutDirection="rtl"
+                android:text=" در حال انجام"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/secondaryLightColor" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                style="@style/SpinKitView.ThreeBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:SpinKit_Color="@color/white" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
